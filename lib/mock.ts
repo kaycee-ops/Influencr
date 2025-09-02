@@ -35,6 +35,10 @@ export const saveCampaigns = (rows:Campaign[]) => { if(LS) LS.setItem('campaigns
 export const getMatches = ():Match[] => !LS?[]:JSON.parse(LS.getItem('matches')||'[]')
 export const saveMatches = (rows:Match[]) => { if(LS) LS.setItem('matches', JSON.stringify(rows)) }
 export const getApplications = ():Application[] => !LS?[]:JSON.parse(LS.getItem('applications')||'[]')
+export const saveApplications = (rows: Application[]) => {
+  if (LS) LS.setItem('applications', JSON.stringify(rows))
+}
+
 export const getRatings = ():Rating[] => !LS?[]:JSON.parse(LS.getItem('ratings')||'[]')
 export const saveRatings = (rows:Rating[]) => { if(LS) LS.setItem('ratings', JSON.stringify(rows)) }
 export const getPlan = ():Plan => !LS?'free':(LS.getItem('plan') as Plan)||'free'
