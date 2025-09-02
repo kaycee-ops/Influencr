@@ -1,0 +1,8 @@
+{
+  "/page": "app/page.js",
+  "/messages/[matchId]/page": "app/messages/[matchId]/page.js",
+  "/dashboard/page": "app/dashboard/page.js",
+  "/plans/page": "app/plans/page.js",
+  "/roi/page": "app/roi/page.js",
+  "/calendar/page": "app/calendar/page.js"
+}

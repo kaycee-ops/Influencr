@@ -1,0 +1,1 @@
+export function Stars({value}:{value:number}){ const v=Math.max(0,Math.min(5,Math.round(value*2)/2)); return <span>{[1,2,3,4,5].map(i=>i<=v?'★':(i-0.5<=v?'☆':'☆')).join(' ')}</span> }
