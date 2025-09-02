@@ -25,17 +25,30 @@ export default function Matches() {
     const next = rows.map(r => r.id===m.id ? {...r, discountCode: codeFor(m)} : r)
     saveMatches(next); setRows(next)
   }
-  function fundEscrow(m:Match){
-    const next = rows.map(r => r.id===m.id ? {...r, paymentStatus:'ESCROW_FUNDED'} : r)
-    saveMatches(next); setRows(next)
-  }
-  function markPaid(m:Match){
-    const next = rows.map(r => r.id===m.id ? {...r, paymentStatus:'PAID'} : r)
-    saveMatches(next); setRows(next)
-  }
-  function markCompleted(m:Match){
-    const next = rows.map(r => r.id===m.id ? {...r, paymentStatus:'COMPLETED'} : r)
-    saveMatches(next); setRows(next)
+  ffunction fundEscrow(m: Match) {
+  const next: Match[] = rows.map(r =>
+    r.id === m.id ? ({ ...r, paymentStatus: 'ESCROW_FUNDED' } as Match) : r
+  )
+  saveMatches(next)
+  setRows(next)
+}
+
+function markPaid(m: Match) {
+  const next: Match[] = rows.map(r =>
+    r.id === m.id ? ({ ...r, paymentStatus: 'PAID' } as Match) : r
+  )
+  saveMatches(next)
+  setRows(next)
+}
+
+function markCompleted(m: Match) {
+  const next: Match[] = rows.map(r =>
+    r.id === m.id ? ({ ...r, paymentStatus: 'COMPLETED' } as Match) : r
+  )
+  saveMatches(next)
+  setRows(next)
+}
+
   }
   function rateInf(m:Match){
     const rs = getRatings()
